@@ -86,14 +86,14 @@
                             :initial-size 3
                             :max-size 4))
 
-;; PostgreSQL
-;(defparameter *connection-pool-postgres*
-;  (make-dbi-connection-pool :postgres
-;                            :database-name "dbi-cp"
-;                            :username "nobody"
-;                            :password "nobody"
-;                            :initial-size 2
-;                            :max-size 2))
+; PostgreSQL
+(defparameter *connection-pool-postgres*
+  (make-dbi-connection-pool :postgres
+                            :database-name "dbi-cp"
+                            :username "nobody"
+                            :password "nobody"
+                            :initial-size 2
+                            :max-size 2))
 
 
 (defun test-all (connection-pool)
@@ -109,11 +109,11 @@
 
 (test-all *connection-pool-sqlite3*)
 (test-all *connection-pool-mysql*)
-;(test-all *connection-pool-postgres*)
+(test-all *connection-pool-postgres*)
 
 (shutdown *connection-pool-sqlite3*)
 (shutdown *connection-pool-mysql*)
-;(shutdown *connection-pool-postgres*)
+(shutdown *connection-pool-postgres*)
 
 ;; blah blah blah.
 
