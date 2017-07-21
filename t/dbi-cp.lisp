@@ -86,7 +86,7 @@
                             :initial-size 3
                             :max-size 4))
 
-; PostgreSQL
+;; PostgreSQL
 (defparameter *connection-pool-postgres*
   (make-dbi-connection-pool :postgres
                             :database-name "dbi-cp"
@@ -106,7 +106,6 @@
            (test-statement-error conn))
       (disconnect conn))))
 
-
 (test-all *connection-pool-sqlite3*)
 (test-all *connection-pool-mysql*)
 (test-all *connection-pool-postgres*)
@@ -115,6 +114,5 @@
 (shutdown *connection-pool-mysql*)
 (shutdown *connection-pool-postgres*)
 
-;; blah blah blah.
 
 (finalize)
